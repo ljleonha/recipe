@@ -1,0 +1,542 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ROOT VARIABLES */
+:root{
+    --dark-gray:#0D0D0D;
+    --light-gray:#F2F2F2;
+    --teal:#7ABFBF;
+    --light-teal:rgba(122, 191, 191, .5);
+    --orange:#EB5428;
+
+    --header-fonts:"Bebas Neue", serif;
+    --text-fonts:"Montserrat", serif;
+}
+/* GLOBAL STYLES (small/mobile first) */
+*{
+    box-sizing: border-box;
+}
+
+html{
+    background-color: var(--light-teal);
+}
+
+body{
+    width: 80%;
+    min-width: 414px;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: var(--light-gray);
+}
+
+header, footer{
+    width: 100%;
+}
+
+#intro img{
+    max-width: 100%;
+}
+
+/* FONTS*/
+h1, h2, h3, nav a, nav span, menu li, #social li, footer{
+    font-family: var(--header-fonts);
+}
+
+p, dd, li, nav, input{
+    font-family: var(--text-fonts);
+}
+
+dt{
+    font-family: var(--header-fonts);
+    font-weight: 700;
+}
+
+h1, h2, h3, p, dd, dt, #more img{
+    padding: 10px;
+}
+
+/* NAVIGATION */
+nav {
+    grid-area: nav;
+    min-width: 414px;
+    width: 80%;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 3px #bbb;
+    position: fixed;
+    top: 0;
+    z-index:5;
+}
+nav ul {
+    grid-area: hamburger;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    max-height: 0;
+}
+nav li img {
+    display: none;
+}
+nav li a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #000;
+    transition: 300ms;
+}
+
+nav li a:hover {
+    color: var(--orange);
+}
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+    position: relative;
+    bottom: 7px;
+    left: 25px;
+}
+nav span {
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+nav label svg {
+    display: block;
+}
+label span:before, label span:after {
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+nav input {
+    display: none;
+}
+nav input:checked ~ ul {
+    max-height: 550px;
+}
+nav h2 {
+    visibility: hidden;
+    height: 1px;
+    width: 1px;
+}
+
+#logo{
+    position: absolute;
+    display: inline-block;
+    padding: 20px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#sign-in{
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    position: absolute;
+    display: inline-block;
+    top: 10px;
+    right: 25px;
+}
+
+#logo{
+    background-color: var(--orange);
+}
+/*  */
+header h1{
+    padding-top: 170px;
+    font-size: 40px;
+    text-align: center;
+}
+
+/* SEARCH BAR */
+#search{
+    min-width: 414px;
+    width: 80%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    top: 100px;
+}
+
+input{
+    height: 49px;
+    border: 3px solid var(--orange);
+    border-right: none;
+}
+
+button{
+    border-color: var(--orange);
+    border-left: none;
+    background-color: var(--orange);
+}
+
+/* MENU */
+#side-menu{
+    min-width: 414px;
+}
+menu{
+    display: flex;
+    justify-content: center;
+}
+
+menu li{
+    margin: 15px;
+    list-style: none;
+}
+menu svg{
+    display: block;
+    margin: auto;
+}
+menu span{
+    display: block;
+}
+
+menu a{
+    text-align: center;
+    text-decoration: none;
+    color: var(--orange);
+}
+
+menu span{
+    padding: 5px;
+    transition: 100ms;
+}
+
+menu span:hover{
+    background-color: var(--orange);
+    color: var(--light-gray);
+}
+
+/* INTRO */
+h2{
+    font-size: 30px;
+    text-align: center;
+}
+#ingredients ul{
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+#ingredients li{
+    padding: 10px;
+}
+
+#directions ol{
+    list-style-type: decimal;
+    list-style-position: outside;
+    padding-left: 35px;
+}
+#directions li{
+    padding: 10px;
+}
+.group{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+/* MORE RECIPES */
+#more{
+    background-color: var(--teal);
+}
+.recipes img{
+    width: 100%;
+}
+.recipes{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+aside p:last-of-type{
+    font-weight: 700;
+}
+
+.stars{
+    padding-left: 10px;
+}
+
+/* FOOTER */
+footer img{
+    position: relative;
+    display: block;
+    bottom: 50px;
+    margin: auto;
+}
+#social{
+    display: flex;
+    justify-content: center;
+}
+
+footer svg{
+    display: block;
+    margin: auto;
+}
+footer span{
+    display: block;
+    padding: 5px;
+    transition: 100ms;
+}
+
+footer span:hover{
+    background-color: var(--orange);
+    color: var(--light-gray);
+}
+
+footer a{
+    text-align: center;
+    text-decoration: none;
+    color: var(--orange);
+    padding: 25px;
+}
+
+footer h4{
+    text-align: center;
+    position: relative;
+    top: 200px;
+}
+
+/* MEDIA QUERY (medium) */
+@media screen and (min-width:768px) {
+    nav{
+        width: 80%;
+        padding-top: 100px;
+    }
+
+    nav li img{
+        display: block;
+        margin: auto;
+        width: 50px;
+    }
+    nav label{
+        visibility: hidden;
+    }
+    nav ul{
+        overflow: visible;
+        position: absolute;
+        top: 70px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    #logo{
+        left: 35px;
+    }
+    #search{
+        position: fixed;
+        width: 80%;
+        top: 12px;
+        z-index: 7;
+    }
+    header h1{
+        padding-top: 200px;
+        text-align: left;
+    }
+    nav li a{
+        color: var(--orange);
+        display: block;
+        text-align: center;
+    }
+
+    #side-menu{
+        width: 80%;
+        position: absolute;
+        background-color: rgba(255, 255, 255, .5);
+    }
+    #recipe{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #details{
+        grid-column-start: span 2;
+    }
+    .group{
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+    }
+    dt{
+        text-align: right;
+    }
+
+    #more{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #more img{
+        padding: 0;
+    }
+
+    #more h2{
+        grid-column-start: span 2;
+    }
+
+    footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer div{
+        grid-column-start: 1;
+        grid-row-start: 1;
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+    #social{
+        grid-column-start: 2;
+    }
+}
+
+@media screen and (min-width:1280px){
+    nav{
+        max-width: 1280px;
+        padding-top: 0;
+    }
+
+    nav ul{
+        max-width: 1280px;
+        top: -15px;
+    }
+    #logo{
+        left: 35px;
+    }
+    #search{
+        max-width: 1280px;
+        position: absolute;
+        top: 100px;
+        padding: 0;
+        z-index: 4;
+    }
+
+    header h1{
+        padding-top: 170px;
+        text-align: center;
+    }
+    #intro{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    #intro img{
+        padding-left: 150px;
+    }
+
+    #side-menu{
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0);
+    }
+ 
+    menu{
+        background-color: white;
+        border: 3px solid var(--orange);
+        display: flex;
+        width: 150px;
+        position: absolute;
+        flex-direction: column;
+    }
+    #details{
+        background-color: var(--dark-gray);
+        color: var(--teal);
+    }
+    dl{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        text-align: center;
+    }
+    #recipe{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    .group{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    dt{
+        text-align: center;
+    }
+    #more{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    #more h2{
+        grid-column-start: span 4;
+    }
+
+    .recipes{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+    #social{
+        padding: 0;
+    }
+    #social a{
+        padding: 50px;
+    }
+    footer div{
+        padding-top: 30px;
+    }
+    footer img{
+        margin: 10px;
+    }
+
+    footer h4{
+        top: 50px;
+        right: 20px;
+    }
+
+}
